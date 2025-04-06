@@ -47,6 +47,8 @@ Whether it's about understanding the philosophy of ancient education, participat
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/gurukulam.git
-cd gurukulam
+git clone https://github.com/Adityas3111N/Gurukulam.git
+cd Gurukulam
 npm install
+npm run dev
+

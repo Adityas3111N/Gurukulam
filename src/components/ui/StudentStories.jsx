@@ -8,14 +8,14 @@ const StudentStoriesSection = () => {
       journey: "From Brick Kilns to Biology Labs",
       description:
         "Ravi once helped his parents in a brick kiln. After joining Gurukulam, he found a love for science. With proper mentorship and world-class labs, he won the National Science Olympiad and is now preparing for IISc.",
-      image: "/lab2.jpg",
+      image: "/lab2.webp",
     },
     {
       name: "Meena Sharma",
       journey: "A Dancer's Dream Reignited",
       description:
         "Meena had given up on dance due to poverty. At Gurukulam, she met mentors and got access to a beautiful dance studio. She now performs on national stages and wants to teach rural girls to express themselves.",
-      image: "/dance.jpg",
+      image: "/dance.webp",
     },
   ];
 

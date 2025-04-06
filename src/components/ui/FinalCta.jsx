@@ -49,10 +49,12 @@ const FinalCTA = () => {
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-[#f7f0e8] max-w-sm md:max-w-md w-full">
             <img
-              src="/collage.png"
+              src="/collage.webp"
               alt="Child with hope"
+              loading="lazy"
               className="w-full h-auto object-cover"
             />
+
           </div>
         </div>
       </div>

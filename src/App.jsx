@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from "react-router-dom";
 import { Header, Footer } from './components/ui'
 import './App.css'
+//import { ScrollRestoration } from "react-router-dom";
+
 
 function App() {
   const location = useLocation();

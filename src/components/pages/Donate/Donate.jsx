@@ -2,6 +2,7 @@ import React, { useState, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import emailConfig from "../../Conf/Conf.js";
+import { Helmet } from "react-helmet";
 
 // Lazy load components
 const DonateForm = lazy(() => import("./DonateForm"));
@@ -75,6 +76,44 @@ const DonatePage = () => {
 
   return (
     <>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Donate to Empower a Child’s Future | Gurukulam KWS</title>
+        <meta
+          name="description"
+          content="Your donation can change a child's life, helping them achieve their dreams and succeed in their future."
+        />
+
+        {/* Open Graph for Facebook, LinkedIn, etc. */}
+        <meta property="og:title" content="Donate to Empower a Child’s Future | Gurukulam KWS" />
+        <meta
+          property="og:description"
+          content="Every rupee donated directly impacts a child's future. Be the reason someone smiles today and help them unlock their potential."
+        />
+        <meta property="og:image" content="/logo.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://gurukulamkws.com/donate" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Gurukulam KWS" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:title" content="Donate to Empower a Child’s Future | Gurukulam KWS" />
+        <meta
+          name="twitter:description"
+          content="Every rupee donated goes towards changing a child’s life. Make a difference today and bring smiles to the faces of tomorrow's leaders."
+        />
+        <meta name="twitter:image" content="/logo.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@gurukulam_kws" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://gurukulamkws.com/donate" />
+      </Helmet>
+
+
+
       <section className="min-h-screen bg-[#fffdf8] py-20 px-6 sm:px-10 flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -89,9 +128,9 @@ const DonatePage = () => {
             transition={{ duration: 0.7 }}
             className="text-center"
           >
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#003d30] mb-4">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#003d30] mb-4">
               Be the Reason a Child Smiles Today
-            </h2>
+            </h1>
             <p className="text-gray-600 max-w-xl mx-auto mb-10 text-sm sm:text-base">
               Your donation isn't just money — it's a chance, a hope, a future.
               Every rupee goes directly to empowering one child's dreams.
@@ -105,7 +144,6 @@ const DonatePage = () => {
               handleSubmit={handleSubmit}
               isSending={isSending}
             />
-
           </Suspense>
 
           <div className="mt-12 text-center">
@@ -120,7 +158,7 @@ const DonatePage = () => {
                 loading="lazy"
                 decoding="async"
                 src="/QR.webp"
-                alt="PayTM QR Code"
+                alt="PayTM QR Code for donations"
                 className="w-40 h-40 object-contain border rounded-xl shadow-md"
               />
             </div>
@@ -130,8 +168,8 @@ const DonatePage = () => {
               onClick={handleSubmit}
               disabled={isSending}
               className={`cursor-pointer mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold transition-all ${isSending
-                  ? "bg-gray-400 cursor-not-allowed text-white"
-                  : "bg-yellow-400 text-[#003d30] hover:bg-yellow-500"
+                ? "bg-gray-400 cursor-not-allowed text-white"
+                : "bg-yellow-400 text-[#003d30] hover:bg-yellow-500"
                 }`}
             >
               <FaCheckCircle />

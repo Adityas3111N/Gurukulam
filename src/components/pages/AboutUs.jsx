@@ -94,7 +94,7 @@ const AboutUs = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    At <span className="text-yellow-400 font-semibold">Gurukulam</span>, our vision goes beyond just teaching...
+                    At <span className="text-yellow-400 font-semibold">Gurukulam - Khusiyon wala school</span>, our vision goes beyond just teaching...
                     <br /><br />
                     Our students grow strong — mentally and physically — through daily yoga, meditation, gym workouts, and in-house sports. We ignite curiosity, not cram content.
                 </motion.p>

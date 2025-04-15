@@ -32,14 +32,18 @@ const Header = () => {
               <span>Hanspuram, Kanpur - 208021</span>
             </a>
 
-            <div className="flex items-center gap-1.5">
+            {/* Phone */}
+            <a href="tel:+916388023523" className="flex items-center gap-1.5 hover:text-[#FDD65B] transition">
               <FiPhone style={{ color: green }} />
               <span>+91-6388023523</span>
-            </div>
-            <div className="flex items-center gap-1.5">
+            </a>
+
+            {/* Email */}
+            <a href="mailto:contact@gurukulamkws.com" className="flex items-center gap-1.5 hover:text-[#FDD65B] transition">
               <FiMail style={{ color: green }} />
-              <span>contact@gurukulam.org</span>
-            </div>
+              <span>contact@gurukulamkws.com</span>
+            </a>
+
           </div>
 
           {/* Social Icons */}
@@ -77,7 +81,11 @@ const Header = () => {
       <div className="py-4 px-4 sm:px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <div className="text-xl sm:text-2xl font-bold text-[#00715D]">Gurukulam</div>
+          {/* Logo */}
+          <div className="text-xl sm:text-2xl font-bold text-[#00715D]">
+            <Link to="/">Gurukulam</Link>
+          </div>
+
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-10 text-gray-700 font-medium text-sm">

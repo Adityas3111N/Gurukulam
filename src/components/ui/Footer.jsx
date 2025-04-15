@@ -19,7 +19,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-4">About Gurukulam</h3>
           <p className="text-sm text-gray-300 leading-6">
-            Gurukulam is a non-profit school providing free quality education to over 300 children, powered by love, knowledge, and your support.
+            Gurukulam - Khusiyon wala school is a non-profit school providing free quality education to over 300 children, powered by love, knowledge, and your support.
           </p>
         </div>
 
@@ -61,7 +61,12 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2 hover:text-[#FDD65B] transition">
               <FaEnvelope />
-              <span>contact@gurukulam.org</span>
+              <a
+                href="mailto:contact@gurukulamkws.com"
+                className="hover:underline"
+              >
+                contact@gurukulamkws.com
+              </a>
             </li>
           </ul>
         </div>
@@ -112,7 +117,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="text-center text-gray-400 text-xs mt-10 border-t border-gray-700 pt-5 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
-        <span>© {new Date().getFullYear()} Gurukulam Foundation. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Gurukulam - Khusiyon Wala School. All rights reserved.</span>
         <span className="flex items-center gap-1">
           Made with <FaHeart className="text-red-500" /> by{" "}
           <a

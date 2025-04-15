@@ -41,7 +41,7 @@ const FinalCTA = () => {
           </div>
 
           <p className="mt-5 text-xs text-gray-600 font-semibold">
-            ❤️ 2,000+ children still waiting for a seat at Gurukulam.
+            ❤️ 2,000+ children still waiting for a seat at Gurukulam - Khusiyon wala school
           </p>
         </div>
 

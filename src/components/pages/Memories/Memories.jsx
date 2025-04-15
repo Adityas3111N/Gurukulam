@@ -84,8 +84,11 @@ export default function MemoriesPage() {
           Relive the Memories
         </motion.h1>
         <p className="text-[#444] text-md md:text-lg max-w-3xl mx-auto mb-14">
-          Every smile, every win, every discovery. Dive into the moments that made Gurukulam unforgettable.
+          Every smile, every win, every discovery. Dive into the moments that made
+          <span className="text-[#016630] font-semibold"> Gurukulam - Khushiyon Wala School</span> unforgettable.
         </p>
+
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {memoryCards.map((card, i) => (

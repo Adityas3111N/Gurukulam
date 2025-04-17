@@ -146,62 +146,81 @@ const DonatePage = () => {
             />
           </Suspense>
 
-          <div className="mt-12 text-center">
-            <h3 className="text-xl font-semibold text-[#003d30] mb-2">
-              UPI / PayTM QR
-            </h3>
-            <p className="text-gray-600 text-sm mb-4">
-              Scan the QR below or send to <strong>example@upi</strong>
-            </p>
-            <div className="flex justify-center">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/QR.webp"
-                alt="PayTM QR Code for donations"
-                className="w-40 h-40 object-contain border rounded-xl shadow-md"
-              />
-            </div>
+          <div className="mt-12 text-center px-4">
+      <h3 className="text-xl font-semibold text-[#003d30] mb-4">
+        Donate via UPI, PayTM or Bank Transfer
+      </h3>
+      <p className="text-gray-600 text-sm mb-6 max-w-lg mx-auto">
+        Scan the QR below or use the bank details to contribute to building a school for those who will build India tommorow.
+      </p>
 
-            <motion.button
-              whileTap={{ scale: isSending ? 1 : 0.95 }}
-              onClick={handleSubmit}
-              disabled={isSending}
-              className={`cursor-pointer mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold transition-all ${isSending
-                ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-yellow-400 text-[#003d30] hover:bg-yellow-500"
-                }`}
+      <div className="flex flex-col md:flex-row justify-center items-start md:items-center gap-8 md:gap-16 mb-8">
+        {/* QR Code */}
+        <div className="w-44 h-44 md:w-52 md:h-52 border rounded-2xl shadow-lg overflow-hidden flex items-center justify-center bg-white mx-auto md:mx-0">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/qrpayment.webp"
+            alt="UPI / PayTM QR Code"
+            className="object-contain max-w-full max-h-full"
+          />
+        </div>
+
+        {/* Bank Details */}
+        <div className="text-left text-sm text-gray-700 bg-[#f8f6f2] px-5 py-4 rounded-2xl shadow-inner max-w-xs w-full mx-auto md:mx-0">
+          <h4 className="text-lg font-semibold text-[#003d30] mb-2">Bank Transfer Details</h4>
+          <ul className="space-y-1">
+            <li><strong>Bank Name:</strong> Indian Bank</li>
+            <li><strong>Account Holder:</strong> Uddeshya Sachan</li>
+            <li><strong>Account Number:</strong> 50350388750</li>
+            <li><strong>IFSC Code:</strong> IDIB000H530</li>
+            <li><strong>UPI ID:</strong> 6388023523@ybl</li>
+            <li><strong>Branch:</strong> Hanspuram</li>
+            <li><strong>Phonepe/Gpay:</strong> 6388023523</li>
+          </ul>
+        </div>
+      </div>
+
+      <motion.button
+        whileTap={{ scale: isSending ? 1 : 0.95 }}
+        onClick={handleSubmit}
+        disabled={isSending}
+        className={`cursor-pointer inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold transition-all ${
+          isSending
+            ? "bg-gray-400 cursor-not-allowed text-white"
+            : "bg-yellow-400 text-[#003d30] hover:bg-yellow-500"
+        }`}
+      >
+        <FaCheckCircle />
+        {isSending ? (
+          <>
+            <svg
+              className="animate-spin h-5 w-5 mr-2 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
             >
-              <FaCheckCircle />
-              {isSending ? (
-                <>
-                  <svg
-                    className="animate-spin h-5 w-5 mr-2 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                    ></path>
-                  </svg>
-                  Submitting...
-                </>
-              ) : (
-                "I've Completed the Payment"
-              )}
-            </motion.button>
-          </div>
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              ></path>
+            </svg>
+            Submitting...
+          </>
+        ) : (
+          "I've Completed the Payment"
+        )}
+      </motion.button>
+    </div>
         </motion.div>
       </section>
 

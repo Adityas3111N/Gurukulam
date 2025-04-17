@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {Link} from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import {
     FaFlask,
     FaPalette,
@@ -61,9 +62,9 @@ const ProgramCard = ({ icon, title, color, description }) => {
 
             <div className="flex flex-col gap-2 mb-4">
                 <Link to="/volunteer">
-                <button className="cursor-pointer bg-[#003d30] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#154734] transition-all">
-                    Volunteer
-                </button>
+                    <button className="cursor-pointer bg-[#003d30] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#154734] transition-all">
+                        Volunteer
+                    </button>
                 </Link>
                 <Link to="/donate">
                     <button className="cursor-pointer border border-[#003d30] text-[#003d30] rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#003d30] hover:text-white transition-all">
@@ -86,19 +87,33 @@ const ProgramCard = ({ icon, title, color, description }) => {
 const ProgramsSection = () => {
     return (
         <section className="py-20 px-6 sm:px-10 bg-[#fffdf8] text-center">
-            <motion.h2
-                className="text-4xl md:text-5xl font-bold text-yellow-400 mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-            >
-                Empower A Child’s Future
-            </motion.h2>
+            <Helmet>
+                <title>Empower Children | Gurukulam - Khushiyon Wala School</title>
+                <meta name="description" content="Join hands with Gurukulam, a Khushiyon Wala School in Kanpur empowering underprivileged children through free education, science, arts, sports, and real-world skills." />
+                <meta name="keywords" content="Gurukulam Khushiyon Wala School, free school Kanpur, Uddeshya Sachan, volunteer education India, donate for children, NGOs in Kanpur, Science arts sports education" />
+                <meta property="og:title" content="Empower Children | Gurukulam - Khushiyon Wala School" />
+                <meta property="og:description" content="Started with 5 kids, now empowering 150+ with free, joyful, real-world education. Be a part of the change." />
+                <meta property="og:image" content="https://gurukulamkws.com/logo.webp" />
+                <meta property="og:url" content="https://gurukulamkws.com/programs" />
+                <meta name="robots" content="index, follow" />
+            </Helmet>
 
-            <p className="text-[#444] text-md md:text-lg max-w-3xl mx-auto mb-14">
-                Choose a cause close to your heart. Whether it's science, sports, or skills—your support gives children the chance to rise, explore, and thrive.
+            <motion.h2
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl font-bold text-center text-[#2e3929] mb-2"
+            >
+                Become a Volunteer at <p>At <Link to="/" className="text-yellow-400 underline">Gurukulam</Link>, our vision goes beyond...</p>
+
+            </motion.h2>
+            <p className="text-center text-[#4f4f4f] max-w-md mx-auto mb-8 text-base">
+                Ready to create real change? Join
+                <span> At <Link to="/" className="text-yellow-400 underline">Gurukulam</Link>, our vision goes beyond...</span>
+                as a volunteer and inspire the next generation of dreamers, doers, and changemakers.
             </p>
+
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
                 {programs.map((prog, index) => (

@@ -2,9 +2,8 @@ import React from "react";
 import Gallery from "../Gallery.jsx";
 
 const poetriesImages = [
-  "/images/poetries/1.jpg",
-  "/images/poetries/2.jpg",
-  "/images/poetries/3.jpg",
+  "/images/art/art2...webp",
+  "/images/art/art...webp",
 ];
 
 export default function PoetriesGallery() {

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react"; // optional icon lib, you can use any
+import { X } from "lucide-react";
 
 const Card = ({ image, title, subtitle, description, icon, children }) => {
   const [showPreview, setShowPreview] = useState(false);
 
   return (
     <>
-      <motion.div
+      <motion.article
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         whileTap={{ scale: 0.98 }}
@@ -15,25 +15,28 @@ const Card = ({ image, title, subtitle, description, icon, children }) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
         onClick={() => setShowPreview(true)}
-        className="relative bg-[#fffaf4] rounded-3xl shadow-2xl overflow-hidden w-full max-w-[95%] sm:max-w-sm mx-auto border border-[#f2e9dc] group cursor-pointer backdrop-blur-md"
+        className="relative bg-[#fffaf4] rounded-3xl shadow-xl overflow-hidden w-full max-w-[95%] sm:max-w-sm mx-auto border border-[#f2e9dc] group cursor-pointer backdrop-blur-md transition-transform"
       >
         {/* Image Section */}
         {image && (
           <div className="relative w-full h-44 sm:h-56 overflow-hidden">
             <img
               src={image}
-              alt={title}
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+              alt={`Story of ${title}`}
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
               loading="lazy"
+              width="400"
+              height="224"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#003D30]/60 to-transparent" />
           </div>
         )}
 
-        {/* Content Section */}
+        {/* Content */}
         <div className="p-5 sm:p-6 text-[#2c2c2c] font-sans text-left">
           {icon && (
-            <div className="text-3xl sm:text-4xl mb-3 text-yellow-500 drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1">
+            <div className="text-3xl sm:text-4xl mb-3 text-yellow-500 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
               {icon}
             </div>
           )}
@@ -45,7 +48,7 @@ const Card = ({ image, title, subtitle, description, icon, children }) => {
           )}
 
           {subtitle && (
-            <p className="text-xs sm:text-sm text-gray-500 italic mb-2 leading-tight">
+            <p className="text-xs sm:text-sm text-gray-600 italic mb-2 leading-tight">
               {subtitle}
             </p>
           )}
@@ -58,7 +61,7 @@ const Card = ({ image, title, subtitle, description, icon, children }) => {
 
           {children && <div className="mt-3">{children}</div>}
         </div>
-      </motion.div>
+      </motion.article>
 
       {/* Modal Preview */}
       <AnimatePresence>
@@ -68,6 +71,8 @@ const Card = ({ image, title, subtitle, description, icon, children }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            aria-modal="true"
+            role="dialog"
           >
             <motion.div
               initial={{ scale: 0.8 }}
@@ -76,19 +81,21 @@ const Card = ({ image, title, subtitle, description, icon, children }) => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden"
             >
-              {/* Cancel button */}
+              {/* Close Button */}
               <button
                 onClick={() => setShowPreview(false)}
+                aria-label="Close preview"
                 className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition"
               >
                 <X className="w-5 h-5 text-gray-800" />
               </button>
 
-              {/* Full image */}
+              {/* Full Image */}
               <img
                 src={image}
-                alt={title}
+                alt={`Preview of ${title}'s journey`}
                 className="w-full h-[80vh] object-contain sm:object-cover"
+                loading="lazy"
               />
             </motion.div>
           </motion.div>

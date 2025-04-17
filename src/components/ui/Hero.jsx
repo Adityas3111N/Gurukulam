@@ -13,7 +13,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mt-4 text-base text-gray-700 max-w-lg mx-auto md:mx-0">
-            At <span className="font-semibold text-[#00715D]">Gurukulam - Khusiyon wala school</span>, we educate children forgotten by society. <strong>300+ students, 0 tuition fees, 100% impact.</strong>
+            At <span className="font-semibold text-[#00715D]">Gurukulam - Khushiyon wala school</span>, we educate children forgotten by society. <strong>300+ students, 0 tuition fees, 100% impact.</strong>
             Our mission? To help them become doctors, IAS officers, and dreamers. 
             <span className="font-semibold"> But we need your help. </span>
           </p>

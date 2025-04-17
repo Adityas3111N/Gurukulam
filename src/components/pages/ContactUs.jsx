@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import emailConfig from "../Conf/Conf.js";
 import {
@@ -63,12 +64,27 @@ const ContactUs = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-[#fefcf5] via-[#fcf8e8] to-[#f9f1d8] py-20 px-6 relative">
       <Helmet>
-        <title>Volunteer With Us | Gurukulam</title>
+        <title>Volunteer With Us | Join Gurukulam's Mission for Change</title>
         <meta
           name="description"
-          content="Want to make an impact? Join the Gurukulam mission and volunteer with us to bring change."
+          content="Ready to make a difference? Become a volunteer with Gurukulam and help shape the future. Apply now to bring your energy, passion, and skills to our mission."
         />
+        <meta property="og:title" content="Volunteer With Us | Gurukulam" />
+        <meta
+          property="og:description"
+          content="Join the Gurukulam mission as a volunteer. Be part of real change and impact lives through passion and purpose."
+        />
+        <meta property="og:image" content="https://gurukulamkws.com/logo.webp" />
+        <meta property="og:url" content="https://gurukulamkws.com/volunteer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Volunteer With Us | Gurukulam" />
+        <meta
+          name="twitter:description"
+          content="Help us create a better world. Volunteer with Gurukulam and use your energy for a meaningful mission."
+        />
+        <meta name="twitter:image" content="https://gurukulamkws.com/logo.webp" />
       </Helmet>
+
 
       <motion.div
         whileHover={{ scale: 1.01 }}
@@ -205,7 +221,7 @@ const ContactUs = () => {
           “Volunteering is the ultimate exercise in democracy. You vote in elections once a year,
           but when you volunteer, you vote every day about the kind of community you want to live in.”
         </p>
-        <p className="mt-2 text-[#2f3627] font-semibold">— Team Gurukulam 💛</p>
+        <p className="mt-2 text-[#2f3627] font-semibold">— Team <span><Link to="/" className="text-yellow-400 underline">Gurukulam</Link></span>💛</p>
       </motion.div>
     </section>
   );

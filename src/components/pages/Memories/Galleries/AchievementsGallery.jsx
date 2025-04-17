@@ -2,9 +2,12 @@ import React from "react";
 import Gallery from "../Gallery.jsx";
 
 const achievementsImages = [
-  "/images/achievements/1.jpg",
-  "/images/achievements/2.jpg",
-  "/images/achievements/3.jpg",
+  "/images/achievements/achievement1.webp",
+  "/images/achievements/achievement2.webp",
+  "/images/achievements/achievement4.webp",
+  "/images/achievements/achievement6.webp",
+  "/images/achievements/achievement7.webp",
+  "/images/achievements/achievementgirl.webp",
 ];
 
 export default function AchievementsGallery() {

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import {
     FaLightbulb,
@@ -14,14 +15,15 @@ import WorriersCard from "../ui/WorriersCard"; // adjust path if needed
 const warriors = [
     {
         image: "/logo.webp",
-        title: "Ravi Bhaiya",
+        title: "Uddeshya Bhaiya",
+        alt: "Founder Uddeshya Sachan - Gurukulam",
         subtitle: "From slums to scholar",
         description:
-            "Ravi used to sell vegetables to fund his books. Today, he teaches physics at Gurukulam, guiding kids from similar backgrounds.",
+            "Uddeshya was once the guy who couldn't even afford a pencil. But time changes, but heart doesn't. now he is teaching those who even can't afford to eat. he is filling the gap between the rich and poor.",
         icon: <FaUserShield />,
-        linkedin: "https://www.linkedin.com/in/ravi-bhaiya",
-        instagram: "https://www.instagram.com/ravi.bhaiya",
-        facebook: "https://www.facebook.com/ravi.bhaiya",
+        linkedin: "https://www.linkedin.com/in/uddeshyasachan/",
+        instagram: "https://www.instagram.com/gurukulam_khusiyonwalaschool/",
+        facebook: "https://www.facebook.com/people/Gurukulam-khushiyon-vala-school/100071908592551/",
     },
     {
         image: "/youngWomen.webp",
@@ -39,6 +41,14 @@ const warriors = [
 const AboutUs = () => {
     return (
         <section className="w-full bg-[#003D30] text-white py-24 px-6 md:px-12 relative overflow-hidden">
+
+            <Helmet>
+                <title>About Us | Gurukulam - Khushiyon Wala School</title>
+                <meta name="description" content="Discover the mission of Gurukulam - where kids from slums grow into warriors, poets, and dreamers. Learn about our founders and our life-changing vision." />
+                <meta name="keywords" content="Gurukulam, Khushiyon Wala School, Education for All, Slum Education, Uddeshya Sachan, Anjali Didi, Real Warriors, Transformative Education" />
+                <link rel="canonical" href="https://gurukulamkws.com/about" />
+            </Helmet>
+
             {/* Floating Icons */}
             <div className="absolute inset-0 pointer-events-none">
                 <motion.div
@@ -94,14 +104,14 @@ const AboutUs = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    At <span className="text-yellow-400 font-semibold">Gurukulam - Khusiyon wala school</span>, our vision goes beyond just teaching...
+                    At <span className="text-yellow-400 font-semibold">Gurukulam - Khushiyon wala school</span>, our vision goes beyond just teaching...
                     <br /><br />
                     Our students grow strong — mentally and physically — through daily yoga, meditation, gym workouts, and in-house sports. We ignite curiosity, not cram content.
                 </motion.p>
 
                 {/* Gallery */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {["/yoga2.webp", "/science.webp", "/art.webp"].map((src, idx) => (
+                    {["/images/art/art2...webp", "/images/khusiyan/khusiyan3.webp", "/images/science/science1...webp"].map((src, idx) => (
                         <motion.img
                             key={idx}
                             src={src}
@@ -143,7 +153,7 @@ const AboutUs = () => {
                     <div className="flex flex-col md:flex-row items-center justify-center gap-12">
                         <motion.img
                             src="/logo.webp"
-                            alt="Founder"
+                            alt="Founder Uddeshya Sachan - Gurukulam"
                             loading="lazy"
                             className="w-64 h-64 rounded-full object-cover border-4 border-yellow-500 shadow-lg"
                             initial={{ scale: 0.8, opacity: 0 }}
@@ -178,12 +188,12 @@ const AboutUs = () => {
                                 >
                                     Become a Volunteer
                                 </Link>
-                                <a
-                                    href="#contact"
+                                <Link
+                                    to="/contact"
                                     className="text-white border border-white hover:bg-white hover:text-black font-medium py-2 px-6 rounded-full transition"
                                 >
                                     Talk to the Founder
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     </div>

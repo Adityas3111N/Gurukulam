@@ -35,7 +35,7 @@ const Header = () => {
             {/* Phone */}
             <a href="tel:+916388023523" className="flex items-center gap-1.5 hover:text-[#FDD65B] transition">
               <FiPhone style={{ color: green }} />
-              <span>+91-6388023523</span>
+              <span>+91-7084925251</span>
             </a>
 
             {/* Email */}

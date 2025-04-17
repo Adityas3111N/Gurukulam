@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 
-const Gallery = ({ images }) => {
+const Gallery =  ({ images }) => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   // Prevent body scroll on modal open
@@ -33,6 +33,7 @@ const Gallery = ({ images }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.05 }}
+              loading="lazy"
             />
           </motion.div>
         ))}
